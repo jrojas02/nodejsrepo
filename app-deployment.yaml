@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nodejs-microservice-container
-        image: tu_usuario_dockerhub/nombre_de_tu_imagen:1.0  # Especifica la versión correcta
+        image: jrojas02/demo
         ports:
         - containerPort: 3000
 
