@@ -4,7 +4,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nodejs-microservice-deployment
-  namespace: tu_namespace
+  namespace: nodejsprojects
 spec:
   replicas: 2
   selector:
@@ -27,7 +27,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nodejs-microservice-service
-  namespace: tu_namespace
+  namespace: nodejsprojects
 spec:
   selector:
     app: nodejs-microservice
