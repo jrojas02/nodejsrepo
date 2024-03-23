@@ -1,0 +1,13 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: calculadora-route
+  namespace: singularity-curso
+spec:
+  to:
+    kind: Service
+    name: deployment-svc-calculadora
+    weight: 100
+  port:
+    targetPort: 80  # Puerto del servicio al que se enruta
+  wildcardPolicy: None
