@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: calculadora-ingress
+  namespace: namespace-jrojas
+spec:
+  rules:
+  - host: calculadora.apps-crc.testing
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: calculadora-route
+            port:
+              number: 80

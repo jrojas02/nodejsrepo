@@ -1,7 +1,7 @@
 FROM node:14
-WORKDIR /usr/src/appo
+WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 COPY . .
 EXPOSE 3000
-CMD ["node", "app.js"]d
+CMD ["node", "app.js"]
