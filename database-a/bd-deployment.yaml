@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-mysql
+  namespace: namespace-jrojas02
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: label-mysql
+  template:
+    metadata:
+      labels:
+        app: label-mysql
+    spec:
+      containers:
+        - name: container-mysql
+          image: mysql:latest
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: Alpha3000
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: mysql-persistent-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-persistent-storage
+          persistentVolumeClaim:
+            claimName: mysql-pvc
