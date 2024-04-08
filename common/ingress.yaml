@@ -1,31 +1,31 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: calculadora-ingress
+  name: valmersystemapp-ingress
   namespace: namespace-jrojas02
 spec:
   rules:
-  - host: calculadora.apps-crc.testing
+  - host: valmersystemapp.apps-crc.testing
     http:
       paths:
       - path: /sumar
         pathType: Prefix
         backend:
           service:
-            name: deployment-sumar
+            name: service-c-sumar
             port:
               number: 80
       - path: /multiplicar
         pathType: Prefix
         backend:
           service:
-            name: deployment-multiplicar
+            name: service-b-multiplicar
             port:
               number: 80
       - path: /
         pathType: Prefix
         backend:
-          service:
+         service:
             name: service-a-helloword
             port:
               number: 80
